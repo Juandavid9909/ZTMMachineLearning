@@ -135,3 +135,30 @@ Cuando se nos presentan problemas de overfitting y underfitting podemos encontra
 ## 6. Experimentación
 
 Aquí validamos si nuestro modelo puede mejorar para obtener mejores resultados, y de ser así siempre podemos volver de aquí al primer paso hasta obtener los resultados esperados.
+
+
+# Herramientas de desarrollo
+
+Para instalar miniconda ejecutamos:
+
+```bash
+bash nuestroArchivo.sh
+```
+
+Luego para crear un proyecto:
+
+```bash
+conda create --prefix ./env pandas numpy matplotlib scikit-learn
+
+# Correr nuestro proyecto
+conda activate ./env
+
+# Detener nuestro proyecto
+conda deactivate
+
+# Si no tenemos Jupyter
+conda install jupyter
+
+# Correr Jupyter
+jupyter notebook
+```
