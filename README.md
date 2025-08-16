@@ -70,3 +70,68 @@ Este aprovecha lo que un modelo de Machine Learning ha aprendido en otro modelo 
 
 ### Aprendizaje reforzado
 Se enfoca en tener un programa de computadora ejecutando algunas acciones en un espacio definido, y dándole un premio si lo hace bien o dar un "castigo" si lo hace mal. Esto puede ser por ejemplo un modelo para jugar ajedrez, y darle un punto positivo cada que gana una partida, y un punto negativo cada que pierde, ya que el objetivo de nuestro modelo será maximizar el puntaje obtenido.
+
+
+## 2. Datos
+
+Podemos tener diferentes tipos de datos, estructurados (como pueden ser Excel, CSV) y no estructurados (como imágenes, audios, correos).
+
+Los datos estáticos son los datos que no cambian con el tiempo, por ejemplo un Excel donde tenemos registros de pacientes en un formato CSV.
+
+Streaming data es la data que se está actualizando constantemente, usualmente en nuestros modelos empezamos con los datos estáticos y si vemos que nuestro modelo empieza a resolver los problemas correctamente, podemos pasar al streaming.
+
+
+## 3. Evaluación
+
+Es una métrica para identificar qué tan bien predice el futuro un modelo de Machine Learning. Esto básicamente significa cuál es nuestra precisión mínima, por ejemplo para un proyecto que se encarga de obtener las declaraciones de 2 personas identificar quién causó un accidente, y queremos que nuestra precisión sea del 95%.
+
+
+## 4. Features - características
+
+Se refiere a los distintos datos estructurados y no estructurados. Esto quiere decir que si tenemos un Excel de pacientes con valores del peso, género, rangos y demás, todos estos serán features que podremos usar, y existen 2 tipos:
+
+- **Características numéricas:** Puede ser por ejemplo el peso.
+- **Características categóricas:** Por ejemplo el género del paciente.
+
+
+## 5. Modelamiento
+
+Podemos encontrar 3 pasos a seguir para modelar:
+
+1. Elegir y entrenar un modelo.
+2. Ajustar un modelo.
+3. Comparar los modelos.
+
+El concepto más importante en Machine Learning es este, el entrenamiento, la validación y los conjuntos de tests (o 3 sets). Para empezar tenemos nuestros datos al inicio de todo, luego los dividimos en 3 partes, donde la parte más grande será para entrenar nuestro modelo, y otras 2 pequeñas partes iguales que irán destinadas a la validación para que nuestro modelo pueda corroborar que funciona correctamente, y el test para nosotros comprobar los resultados. Esto se puede ver como ver clases, donde los materiales del curso son nuestro conjunto de entrenamiento, el examen de práctica nuestro conjunto de validación, y por último el examen final que es nuestro conjunto de test.
+
+Un ejemplo es tener 100 registros de pacientes, para nuestro entrenamiento podemos usar 70 registros (70-80%), luego usar 15 para la validación (10-15%) y por último otros 15 para el test (10-15%).
+
+### 1. Elegir el modelo
+Aquí usamos todos los datos de entrenamiento. Actualmente hay muchos modelos Machine Learning que podemos usar, pero debemos tener en cuenta la clase de datos que tenemos. Por ejemplo, si tenemos datos estructurados (en este caso un arbol de decisión), podemos usar CatBoost como nuestra mejor alternativa, y si tenemos data no estructurada, podemos usar Deep Learning, Neural Networks y Transfer Learning.
+
+Una vez hemos seleccionado nuestro modelo entrenamos nuestro modelo, para esto le pasamos nuestros datos de entrada y el dato de salida esperado.
+
+El objetivo en esta etapa es minimizar los tiempos entre los experimentos, es decir que si tenemos 100.000 datos, para iniciar podemos comenzar con 10.000 y ver qué tal va. A su vez, también afecta el tipo de modelo, ya que por ejemplo los modelos profundos como las redes neuronales toman más tiempo en entrenarse comparado a otros tipos de modelos.
+
+### 2. Ajustar el modelo
+Aquí usamos nuestros datos de validación, y podemos ajustarlo con diferentes tipos de datos. Todo esto depende del tipo de algoritmo que estemos usando, por ejemplo si usamos Random Forest, podremos ajustar el número de árboles, y para redes neuronales podemos ajustar el número de capas.
+
+### 3. Comparación de modelos
+Aquí se utilizan los datos de prueba, y esto es como el examen final para nuestros modelos. Si dividimos nuestros datos correctamente al inicio del proceso, esto debería darnos una guía de cómo nuestro modelo funcionará una vez lo despleguemos a producción.
+
+Cuando se nos presentan problemas de overfitting y underfitting podemos encontrar las siguientes soluciones:
+
+#### Underfitting
+- Intentar con un modelo más avanzado.
+- Incrementar los hiperparámetros del modelo.
+- Reducir la cantidad de features.
+- Entrenar más.
+
+#### Overfitting
+- Recolectar más datos.
+- Intentar con un modelo menos avanzado.
+
+
+## 6. Experimentación
+
+Aquí validamos si nuestro modelo puede mejorar para obtener mejores resultados, y de ser así siempre podemos volver de aquí al primer paso hasta obtener los resultados esperados.
