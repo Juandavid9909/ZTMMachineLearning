@@ -161,6 +161,9 @@ conda install jupyter
 
 # Correr Jupyter
 jupyter notebook
+
+# Agregar paquete a nuestro proyecto
+conda install seaborn
 ```
 
 Para ver el contenido estudiado, podemos acceder a este [repositorio](https://github.com/mrdbourke/zero-to-mastery-ml/).
